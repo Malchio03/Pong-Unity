@@ -4,26 +4,26 @@ using UnityEngine.InputSystem;
 public class P2 : MonoBehaviour
 {
     public float moveSpeed;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public Rigidbody2D rb;
 
-    // Update is called once per frame
     void Update()
     {
+        if (Keyboard.current == null) return;
+
         bool isPressingUp = Keyboard.current.upArrowKey.isPressed;
         bool isPressingDown = Keyboard.current.downArrowKey.isPressed;
 
+        float yDirection = 0f;
+
         if (isPressingUp)
         {
-            transform.Translate(Vector2.up * Time.deltaTime * moveSpeed);
+            yDirection = 1f;
+        }
+        else if (isPressingDown)
+        {
+            yDirection = -1f;
         }
 
-        if (isPressingDown)
-        {
-            transform.Translate(Vector2.down * Time.deltaTime * moveSpeed);
-        }
+        rb.linearVelocity = new Vector2(0f, yDirection * moveSpeed);
     }
 }

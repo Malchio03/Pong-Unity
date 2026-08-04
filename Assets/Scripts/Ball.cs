@@ -3,25 +3,28 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 { 
     public Rigidbody2D rb;
-    public float startingSpeed;
+    public float moveSpeed;
+    public float maxInitialAngle = 0.67f;
+    public float startX = 0f;
+    public float maxStartY = 4f;
     void Start()
     {
-        bool isRight = Random.value >= 0.5f;
-
-        float xVelocity = -1f;      // direzione orrizontale di default
-
-        if(isRight)
-        {
-            xVelocity = 1f;
-        }
-
-        float yVelocity = Random.Range(-1f, 1f);
-
-        rb.linearVelocity = new Vector2(xVelocity * startingSpeed, yVelocity * startingSpeed);
+       InitialPush();   
     }
 
-    void Update()
+    private void InitialPush()
     {
-        
+        Vector2 dir = Vector2.left * moveSpeed;     // Start moving the ball to the left
+        dir.y = Random.Range(-maxInitialAngle, maxInitialAngle);
+        rb.linearVelocity = dir;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        ScoreZone scorezone = collision.GetComponent<ScoreZone>();
+        if(scorezone != null)
+        {
+            Debug.Log("todo");
+        }
     }
 }
