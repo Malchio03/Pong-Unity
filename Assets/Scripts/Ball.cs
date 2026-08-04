@@ -8,7 +8,7 @@ public class Ball : MonoBehaviour
     {
         bool isRight = Random.value >= 0.5f;
 
-        float xVelocity = -1f;
+        float xVelocity = -1f;      // direzione orrizontale di default
 
         if(isRight)
         {
@@ -20,7 +20,6 @@ public class Ball : MonoBehaviour
         rb.linearVelocity = new Vector2(xVelocity * startingSpeed, yVelocity * startingSpeed);
     }
 
-    // Update is called once per frame
     void Update()
     {
         
