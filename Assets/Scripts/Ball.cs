@@ -3,7 +3,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 { 
     public Rigidbody2D rb;
-    public float moveSpeed;
+    public float moveSpeed = 1f;
     public float maxInitialAngle = 0.67f;
     public float maxStartY = 4f;
 
@@ -16,12 +16,12 @@ public class Ball : MonoBehaviour
 
     private void InitialPush()
     {
-        Vector2 dir = Vector2.left * moveSpeed;     // Start moving the ball to the left
+        Vector2 dir = Vector2.left;     // Start moving the ball to the left
         if(Random.value < 0.5f)
-            dir = Vector2.right * moveSpeed;        // Randomly change direction to the right
+            dir = Vector2.right;        // Randomly change direction to the right
 
         dir.y = Random.Range(-maxInitialAngle, maxInitialAngle);
-        rb.linearVelocity = dir;
+        rb.linearVelocity = dir * moveSpeed;
     }
 
     private void ResetBall()
