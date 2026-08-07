@@ -878,6 +878,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 2013833069}
+    - target: {fileID: 7054841747281265086, guid: a792baa1d8c08b144ba34d8569f0831c, type: 3}
+      propertyPath: maxInitialAngle
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054841747281265086, guid: a792baa1d8c08b144ba34d8569f0831c, type: 3}
+      propertyPath: speedMultiplier
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8073320546263348288, guid: a792baa1d8c08b144ba34d8569f0831c, type: 3}
       propertyPath: m_Name
       value: Ball
@@ -885,6 +893,10 @@ PrefabInstance:
     - target: {fileID: 8846912652082073240, guid: a792baa1d8c08b144ba34d8569f0831c, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846912652082073240, guid: a792baa1d8c08b144ba34d8569f0831c, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
