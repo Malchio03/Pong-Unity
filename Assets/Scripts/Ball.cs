@@ -6,7 +6,7 @@ public class Ball : MonoBehaviour
     public Rigidbody2D rb;
     public float moveSpeed = 1f;
     public float maxInitialAngle = 0.67f;
-    public float maxStartY = 4f;
+    public float maxStartY = 4f; 
     public float speedMultiplier = 1.3f;
 
     private float startX = 0f;
