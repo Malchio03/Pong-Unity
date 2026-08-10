@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,6 +7,7 @@ public class GameManager : MonoBehaviour
     public int scorePlayer2;
     public ScoreText scoreTextPlayer1;
     public ScoreText scoreTextPlayer2;
+    public Action onReset;
 
     public void OnScoreZoneReached(int id)      // id it's for the score zone
     {
