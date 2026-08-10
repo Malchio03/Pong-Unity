@@ -4,7 +4,20 @@ using UnityEngine.InputSystem;
 public class P1 : MonoBehaviour
 {
     public float moveSpeed;
-    public Rigidbody2D rb; 
+    public Rigidbody2D rb;
+
+    private Vector3 startPosition;
+
+    private void Start()
+    {
+        startPosition = transform.position;
+        GameManager.instance.onReset += ResetPosition;
+    }
+
+    private void ResetPosition()
+    {
+        transform.position = startPosition;
+    }
 
     void Update()
     {
