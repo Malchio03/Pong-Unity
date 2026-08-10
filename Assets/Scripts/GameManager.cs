@@ -35,11 +35,21 @@ public class GameManager : MonoBehaviour
             scorePlayer2++;
 
         UpdateScores();
+        HighLightScore(id);
     }
 
     private void UpdateScores()
     {
         scoreTextPlayer1.SetScore(scorePlayer1);
         scoreTextPlayer2.SetScore(scorePlayer2);
+    }
+
+    public void HighLightScore(int id)
+    {
+        if(id == 1)
+            scoreTextPlayer1.HighLight();
+
+        if(id == 2)
+            scoreTextPlayer2.HighLight();
     }
 }
